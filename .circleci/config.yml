@@ -8,12 +8,11 @@ jobs:
     steps:
       - checkout
       - run:
-command: make deps
+          command: make deps
       - run:
-command: make test
+          command: make test
 
-    workflows:
-      basic:
-        jobs:
-          - build-and-test
-
+workflows:
+  basic:
+    jobs:
+      - build-and-test
