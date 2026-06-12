@@ -6,12 +6,12 @@ jobs:
       image: ubuntu-2004:current
 
     steps:
-      -checkout
-      -run: make deps
-      -run: make test
+      - checkout
+      - run: make deps
+      - run: make test
 
     workflows:
       basic:
         jobs:
-          -build-and-test
+          - build-and-test
 
