@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - checkout
-      - run: 
+      - run:
 	 command: make deps
       - run:
 	 command: make test
