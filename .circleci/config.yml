@@ -10,6 +10,8 @@ jobs:
       - run:
           command: make deps
       - run:
+          command: make lint
+      - run:
           command: make test
 
 workflows:
