@@ -25,3 +25,10 @@ docker_run: docker_build
 docker_stop:
 	docker stop hello-world-printer-dev || true
 	docker rm hello-world-printer-dev || true
+
+TAG=$(USERNAME)/hello-world-printer-k5-2026
+docker_push: docker_build
+@docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \
+docker tag hello-world-printer-k5-2026$(TAG); \
+docker push $(TAG); \
+docker logout;
