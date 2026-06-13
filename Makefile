@@ -1,4 +1,4 @@
-.PHONY: deps lint test run
+.PHONY: deps lint test run docker_build docker_run docker_stop
 
 deps:
 	pip install -r requirements.txt
@@ -23,5 +23,5 @@ docker_run: docker_build
 		hello-world-printer
 
 docker_stop:
-	docker stop hello-world-printer-dev || true \
-	docker rm hello-world-printer-dev || truedocker_run: docker_build 
+	docker stop hello-world-printer-dev || true
+	docker rm hello-world-printer-dev || true
