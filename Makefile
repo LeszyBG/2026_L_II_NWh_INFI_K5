@@ -26,13 +26,9 @@ docker_stop:
 	docker stop hello-world-printer-k5-2026 || true
 	docker rm hello-world-printer-k5-2026 || true
 
-USERNAME ?= LeszyBG
-IMAGE=hello-world-printer-k5-2026
-TAG=$(USERNAME)/$(IMAGE):latest
-
+TAG=$(USERNAME)/hello-world-printerk5-2026
 docker_push: docker_build
-	@echo "Logging in..."
-	@docker login --username $(USERNAME)
-	@docker tag hello-world-printer-k5-2026 $(TAG)
-	@docker push $(TAG)
-	@docker logout
+	@docker login --username $(USERNAME) --password $$(DOCKER_PASSWORD); \
+	docker tag hello-world-printer-k5-2026 $(TAG); \
+	docker push $(TAG); \
+	docker logout ;
