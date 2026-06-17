@@ -14,21 +14,19 @@ run:
 	python hello_world/main.py
 
 docker_build:
-	docker build -t hello-world-printer-k5-2026 .
+	docker build -t hello-world-printerk5-2026 .
 
 docker_run: docker_build
 	docker run -d \
-		--name hello-world-printer-k5-2026 \
+		--name hello-world-printerk5-2026 \
 		-p 5000:5000 \
 		hello-world-printer
 
 docker_stop:
-	docker stop hello-world-printer-k5-2026 || true
-	docker rm hello-world-printer-k5-2026 || true
+	docker stop hello-world-printerk5-2026 || true
+	docker rm hello-world-printerk5-2026 || true
 
 TAG=$(USERNAME)/hello-world-printerk5-2026
 docker_push: docker_build
-	@docker login --username $(USERNAME) --password $$(DOCKER_PASSWORD); \
+	@docker login --username $(USERNAME) --password-stdin \
 	docker tag hello-world-printer-k5-2026 $(TAG); \
-	docker push $(TAG); \
-	docker logout ;
