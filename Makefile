@@ -28,5 +28,5 @@ docker_stop:
 
 TAG=$(USERNAME)/hello-world-printerk5-2026
 docker_push: docker_build
-	@docker login --username $(USERNAME) --password "$(DOCKER_PASSWORD)" \
+	@docker login --username $(USERNAME) --password "$(DOCKER_PASSWORD)"; \
 	docker tag hello-world-printer-k5-2026 $(TAG); \
