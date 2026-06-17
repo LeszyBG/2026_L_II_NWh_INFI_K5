@@ -18,13 +18,13 @@ docker_build:
 
 docker_run: docker_build
 	docker run -d \
-		--name hello-world-printer-dev \
+		--name hello-world-printer-k5-2026 \
 		-p 5000:5000 \
 		hello-world-printer
 
 docker_stop:
-	docker stop hello-world-printer-dev || true
-	docker rm hello-world-printer-dev || true
+	docker stop hello-world-printer-k5-2026 || true
+	docker rm hello-world-printer-k5-2026 || true
 
 USERNAME ?= LeszyBG
 IMAGE=hello-world-printer-k5-2026
