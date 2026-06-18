@@ -25,8 +25,14 @@ docker_run: docker_build
 docker_stop:
 	docker stop hello-world-printer-k5-2026 || true
 	docker rm hello-world-printer-k5-2026 || true
-
-IMAGE_NAME=LeszyBG/hello-world-printer-k5-2026
+	
+USERNAME ?= leszybg
+IMAGE_NAME = hello-world-printer-k5-2026
 TAG ?= latest
+FULL_IMAGE=$(USERNAME)/$(IMAGE_NAME)
+
+docker_build:
+	docker build -t $(FULL_IMAGE):$(TAG) .
+
 docker_push: docker_build
-	docker push $(IMAGE_NAME):$(TAG)
+	docker push $(FULL_IMAGE):$(TAG)
