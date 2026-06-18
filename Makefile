@@ -13,8 +13,6 @@ test:
 run:
 	python hello_world/main.py
 
-docker_build:
-	docker build -t hello-world-printer-k5-2026:$(TAG) .
 
 docker_run: docker_build
 	docker run -d \
