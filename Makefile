@@ -24,7 +24,7 @@ docker_stop:
 	docker stop hello-world-printer-k5-2026 || true
 	docker rm hello-world-printer-k5-2026 || true
 	
-USERNAME ?= leszybg
+USERNAME = leszybg
 IMAGE_NAME = hello-world-printer-k5-2026
 TAG ?= latest
 FULL_IMAGE=$(USERNAME)/$(IMAGE_NAME)
