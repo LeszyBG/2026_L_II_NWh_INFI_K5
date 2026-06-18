@@ -26,7 +26,7 @@ docker_stop:
 	docker stop hello-world-printer-k5-2026 || true
 	docker rm hello-world-printer-k5-2026 || true
 
-IMAGE_NAME=leszybg/hello-world-printer-k5-2026
+IMAGE_NAME=LeszyBG/hello-world-printer-k5-2026
 TAG ?= latest
 docker_push: docker_build
 	docker push $(IMAGE_NAME):$(TAG)
