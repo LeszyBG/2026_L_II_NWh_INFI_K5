@@ -15,7 +15,7 @@ jobs:
       - run:
           command: make test
       - run:
-          command: docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKER_PASSWORD"
+          command: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
       - run:
           command: docker info
       - run:
